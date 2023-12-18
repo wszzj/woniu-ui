@@ -1,14 +1,12 @@
 <template>
   <div>
-    <zzj></zzj>
+    导航|<RouterLink to="/xxx">zzj2</RouterLink>|
+    <RouterLink to="/">zzj</RouterLink>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <router-view></router-view>
 </template>
 
-<script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
-import zzj from "./components/zzj.vue";
-</script>
+<script setup lang="ts"></script>
 <style scoped>
 .logo {
   height: 6em;
