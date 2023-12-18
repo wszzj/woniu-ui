@@ -1,15 +1,40 @@
 import { createApp } from "vue";
-import "./style.css";
+import "./style.scss";
 import App from "./App.vue";
 import { createWebHashHistory, createRouter } from "vue-router";
-import Zzj from "./components/Zzj.vue";
-import Zzj2 from "./components/Zzj2.vue";
+import HomeVue from "./views/Home.vue";
+import DocVue from "./views/Doc.vue";
+import ButtonVue from "./components/Button.vue";
+import SwitchVue from "./components/Switch.vue";
+import DialogVue from "./components/Dialog.vue";
+import TabVue from "./components/Tab.vue";
 const history = createWebHashHistory();
 const router = createRouter({
   history: history,
   routes: [
-    { path: "/", component: Zzj },
-    { path: "/xxx", component: Zzj2 },
+    { path: "/", component: HomeVue },
+    {
+      path: "/doc",
+      component: DocVue,
+      // children: [
+      //   {
+      //     path: "switch",
+      //     component: SwitchVue,
+      //   },
+      //   {
+      //     path: "button",
+      //     component: ButtonVue,
+      //   },
+      //   {
+      //     path: "dialog",
+      //     component: DialogVue,
+      //   },
+      //   {
+      //     path: "tab",
+      //     component: TabVue,
+      //   },
+      // ],
+    },
   ],
 });
 const app = createApp(App);
