@@ -1,7 +1,7 @@
 <template>
   <header class="topNav">
     <SwitchIconComponent class="svg-icon" @click="toggleAside" />
-    <div class="logo">LOGO</div>
+    <router-link to="/" class="logo">LOGO</router-link>
     <ol>
       <li>菜单1</li>
       <li>菜单2</li>
