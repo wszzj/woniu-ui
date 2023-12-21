@@ -1,9 +1,9 @@
 <template>
-  <div>Button组件</div>
+  <Button>按钮</Button>
 </template>
 
-<script>
-export default {};
+<script setup lang="ts">
+import Button from "@/lib/Button.vue";
 </script>
 
-<style></style>
+<style lang="scss" scoped></style>
