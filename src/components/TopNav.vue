@@ -26,9 +26,15 @@ const toggleAside = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px;
+  padding: 16px;
   font-size: 16px;
   background-color: pink;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  height: 50px;
   .icon {
     display: none;
   }

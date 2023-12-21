@@ -14,8 +14,10 @@ router.afterEach(() => {
   }
 });
 </script>
+
 <style lang="scss">
 @import "./style.scss";
+
 body {
   font-family: $font-hei;
 }
