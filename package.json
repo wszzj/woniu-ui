@@ -1,7 +1,7 @@
 {
   "name": "woniu-ui",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -17,6 +17,7 @@
     "sass": "^1.69.5",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
+    "vite-svg-loader": "^5.1.0",
     "vue-tsc": "^1.8.25"
   }
 }

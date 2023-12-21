@@ -2,15 +2,14 @@
   <router-view></router-view>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { provide, ref } from "vue";
-
-export default {
-  name: "App",
-  setup() {
-    const asideVisible = ref(false);
-    provide("asideVisible", asideVisible);
-  },
-};
+const asideVisible = ref(false);
+provide("asideVisible", asideVisible);
 </script>
-<style scoped></style>
+<style lang="scss">
+@import "./style.scss";
+body {
+  font-family: $font-hei;
+}
+</style>

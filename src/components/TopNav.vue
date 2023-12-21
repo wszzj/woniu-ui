@@ -1,6 +1,7 @@
 <template>
   <header class="topNav">
-    <div class="icon" @click="toggleAside">LOGO</div>
+    <SwitchIconComponent class="svg-icon" @click="toggleAside" />
+    <div class="logo">LOGO</div>
     <ol>
       <li>菜单1</li>
       <li>菜单2</li>
@@ -9,19 +10,14 @@
   </header>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { Ref, inject } from "vue";
-
-export default {
-  setup() {
-    const asideVisible = inject<Ref<boolean>>("asideVisible");
-    const toggleAside = () => {
-      if (asideVisible) {
-        asideVisible.value = !asideVisible.value;
-      }
-    };
-    return { toggleAside };
-  },
+import SwitchIconComponent from "../assets/icons/switchIcon.svg?component";
+const asideVisible = inject<Ref<boolean>>("asideVisible");
+const toggleAside = () => {
+  if (asideVisible) {
+    asideVisible.value = !asideVisible.value;
+  }
 };
 </script>
 
@@ -33,7 +29,12 @@ export default {
   padding: 12px;
   font-size: 16px;
   background-color: pink;
-  > .icon {
+  .icon {
+    display: none;
+  }
+  > .logo {
+    max-width: 6em;
+    margin-right: auto;
   }
   > ol {
     display: flex;
@@ -41,6 +42,18 @@ export default {
 
     > li {
       padding-left: 9px;
+    }
+  }
+  @media (max-width: 500px) {
+    > ol {
+      display: none;
+    }
+    > .logo {
+      margin: 0 auto;
+    }
+    > .icon {
+      display: inline-block;
+      color: #e3e3e3;
     }
   }
 }

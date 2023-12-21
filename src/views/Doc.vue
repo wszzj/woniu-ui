@@ -16,16 +16,10 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { Ref, inject } from "vue";
 import TopNav from "../components/TopNav.vue";
-export default {
-  components: { TopNav },
-  setup() {
-    const asideVisible = inject<Ref<boolean>>("asideVisible");
-    return { asideVisible };
-  },
-};
+const asideVisible = inject<Ref<boolean>>("asideVisible");
 </script>
 
 <style lang="scss" scoped>

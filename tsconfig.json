@@ -5,6 +5,7 @@
     "module": "ESNext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
+    "type": ["vite-svg-loader"],
 
     /* Bundler mode */
     "moduleResolution": "node",
