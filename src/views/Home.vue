@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts" setup>
-import TopNav from "../components/TopNav.vue";
+import TopNav from "@/components/TopNav.vue";
 </script>
 
 <style lang="scss" scoped>

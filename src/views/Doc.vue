@@ -8,7 +8,7 @@
           <li><router-link to="/doc/switch">Switch组件 </router-link></li>
           <li><router-link to="/doc/button">Button组件 </router-link></li>
           <li><router-link to="/doc/dialog">Dialog组件 </router-link></li>
-          <li><router-link to="/doc/tab">Tab组件 </router-link></li>
+          <li><router-link to="/doc/tabs">Tabs组件 </router-link></li>
         </ul>
       </aside>
       <main>
@@ -20,7 +20,7 @@
 
 <script lang="ts" setup>
 import { Ref, inject } from "vue";
-import TopNav from "../components/TopNav.vue";
+import TopNav from "@/components/TopNav.vue";
 const asideVisible = inject<Ref<boolean>>("asideVisible");
 </script>
 

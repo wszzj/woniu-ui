@@ -1,12 +1,14 @@
 <template>
-  <button @click="toggle" :class="{ checked }"><span></span></button>
+  <button @click="toggle" :class="{ checked: value }"><span></span></button>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-const checked = ref(false);
+const props = defineProps<{
+  value: boolean;
+}>();
+const emit = defineEmits(["update:value"]);
 const toggle = () => {
-  checked.value = !checked.value;
+  emit("update:value", !props.value);
 };
 </script>
 
@@ -18,23 +20,35 @@ button {
   height: $bh;
   border: none;
   border-radius: $bh / 2;
-  background-color: lightgrey;
+  background-color: #bfbfbf;
   position: relative;
-}
-span {
-  width: $sh;
-  height: $sh;
-  border-radius: $sh / 2;
-  position: absolute;
-  left: 2px;
-  top: 2px;
-  background-color: white;
-  transition: left 250ms;
-}
-button.checked {
-  background-color: blue;
-}
-button.checked > span {
-  left: calc(100% - #{$sh} - 2px);
+  cursor: pointer;
+  > span {
+    width: $sh;
+    height: $sh;
+    border-radius: $sh / 2;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    background-color: white;
+    transition: all 250ms;
+  }
+  &.checked {
+    background-color: #5993f9;
+  }
+  &.checked > span {
+    left: calc(100% - #{$sh} - 2px);
+  }
+  &:active {
+    > span {
+      width: calc(#{$sh} + 4px);
+    }
+  }
+  &.checked:active {
+    > span {
+      width: calc(#{$sh} + 4px);
+      margin-left: -4px;
+    }
+  }
 }
 </style>
