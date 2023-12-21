@@ -4,7 +4,8 @@
 
 <script lang="ts" setup>
 import { provide, ref } from "vue";
-const asideVisible = ref(false);
+const width = document.documentElement.clientWidth;
+const asideVisible = ref(width > 500 ? true : false);
 provide("asideVisible", asideVisible);
 </script>
 <style lang="scss">
