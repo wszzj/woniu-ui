@@ -13,7 +13,8 @@
 <script lang="ts" setup>
 import { inject } from "vue";
 import SwitchIconComponent from "../assets/icons/switchIcon.svg?component";
-const toggleAside = inject<() => void>("toggleAside");
+import { toggleAsideKey } from "../keys";
+const toggleAside = inject(toggleAsideKey);
 </script>
 
 <style lang="scss" scoped>

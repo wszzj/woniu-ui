@@ -5,6 +5,7 @@
 <script lang="ts" setup>
 import { provide, ref } from "vue";
 import { router } from "./router";
+import { asideVisibleKey, toggleAsideKey } from "./keys";
 const width = document.documentElement.clientWidth;
 const asideVisible = ref(width > 500 ? true : false);
 const toggleAside = () => {
@@ -12,8 +13,8 @@ const toggleAside = () => {
     asideVisible.value = !asideVisible.value;
   }
 };
-provide("asideVisible", asideVisible);
-provide("toggleAside", toggleAside);
+provide(asideVisibleKey, asideVisible);
+provide(toggleAsideKey, toggleAside);
 router.afterEach(() => {
   if (width <= 500) {
     asideVisible.value = false;

@@ -19,9 +19,10 @@
 </template>
 
 <script lang="ts" setup>
-import { Ref, inject } from "vue";
+import { inject } from "vue";
 import TopNav from "@/components/TopNav.vue";
-const asideVisible = inject<Ref<boolean>>("asideVisible");
+import { asideVisibleKey } from "../keys";
+const asideVisible = inject(asideVisibleKey);
 </script>
 
 <style lang="scss" scoped>
