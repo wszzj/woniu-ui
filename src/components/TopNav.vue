@@ -11,14 +11,9 @@
 </template>
 
 <script lang="ts" setup>
-import { Ref, inject } from "vue";
+import { inject } from "vue";
 import SwitchIconComponent from "../assets/icons/switchIcon.svg?component";
-const asideVisible = inject<Ref<boolean>>("asideVisible");
-const toggleAside = () => {
-  if (asideVisible) {
-    asideVisible.value = !asideVisible.value;
-  }
-};
+const toggleAside = inject<() => void>("toggleAside");
 </script>
 
 <style lang="scss" scoped>
