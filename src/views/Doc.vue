@@ -11,7 +11,7 @@
       </ul>
     </aside>
     <main>
-      <div>主要内容</div>
+      <router-view />
     </main>
   </div>
 </template>
