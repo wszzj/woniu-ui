@@ -16,8 +16,7 @@ const props = withDefaults(defineProps<Props>(), {
 <style lang="scss">
 $blue: #3a74f9;
 .wo-button {
-  font-size: 14px;
-  padding: 8px 15px;
+  padding: 6px 16px;
   border-radius: 6px;
   margin-right: 16px;
   margin-top: 16px;
@@ -28,13 +27,45 @@ $blue: #3a74f9;
   align-items: center;
   background-color: #fff;
   border: 1px solid #d9d9d9;
-  box-shadow: 0 0 1px fade-out($color: #000000, $amount: 0.9);
+  box-shadow: 0 0 1px fade-out(#000000, 0.9);
   cursor: pointer;
   &:hover,
   &:focus {
     color: #4096ff;
     border-color: #4096ff;
     outline: none;
+  }
+  &.wo-theme-primary {
+    background-color: $blue;
+    color: #fff;
+    &:hover,
+    &:focus {
+      background-color: lighten($blue, 5%);
+    }
+  }
+  &.wo-theme-dashed {
+    border: 1px dashed #d9d9d9;
+  }
+  &.wo-theme-text {
+    border: none;
+    color: #000;
+    box-shadow: none;
+    &:focus,
+    &:hover {
+      background-color: #f0f0f0;
+    }
+    &:active {
+      background-color: darken(#f0f0f0, 5%);
+    }
+  }
+  &.wo-theme-link {
+    border: none;
+    color: #4096ff;
+    box-shadow: none;
+    &:focus,
+    &:hover {
+      color: lighten(#4096ff, 10%);
+    }
   }
 }
 </style>
