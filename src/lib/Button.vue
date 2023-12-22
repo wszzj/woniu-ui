@@ -1,15 +1,25 @@
 <template>
-  <button :class="{ [`wo-theme-${theme}`]: theme }" class="wo-button">
+  <button :class="classes" class="wo-button">
     <slot></slot>
   </button>
 </template>
 
 <script lang="ts" setup>
+import { computed } from "vue";
+
 export interface Props {
   theme: string;
+  size: string;
 }
 const props = withDefaults(defineProps<Props>(), {
   theme: "default",
+  size: "normal",
+});
+const classes = computed(() => {
+  return {
+    [`wo-theme-${props.theme}`]: props.theme,
+    [`wo-size-${props.size}`]: props.size,
+  };
 });
 </script>
 
@@ -66,6 +76,12 @@ $blue: #3a74f9;
     &:hover {
       color: lighten(#4096ff, 10%);
     }
+  }
+  &.wo-size-small {
+    font-size: 12px;
+  }
+  &.wo-size-big {
+    font-size: 20px;
   }
 }
 </style>
