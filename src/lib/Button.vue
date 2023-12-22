@@ -1,5 +1,5 @@
 <template>
-  <button :class="{ [`theme-${props.theme}`]: props.theme }" class="wo-button">
+  <button :class="{ [`wo-theme-${theme}`]: theme }" class="wo-button">
     <slot></slot>
   </button>
 </template>
@@ -13,11 +13,9 @@ const props = withDefaults(defineProps<Props>(), {
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $blue: #3a74f9;
-$lightBlue: #5993f9;
 .wo-button {
-  box-sizing: border-box;
   font-size: 14px;
   padding: 8px 15px;
   border-radius: 6px;
@@ -30,12 +28,13 @@ $lightBlue: #5993f9;
   align-items: center;
   background-color: #fff;
   border: 1px solid #d9d9d9;
-  box-shadow: 0 1px 0 fade-out($color: #000000, $amount: 0.9);
+  box-shadow: 0 0 1px fade-out($color: #000000, $amount: 0.9);
   cursor: pointer;
   &:hover,
   &:focus {
     color: #4096ff;
     border-color: #4096ff;
+    outline: none;
   }
 }
 </style>

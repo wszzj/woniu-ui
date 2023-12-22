@@ -1,5 +1,7 @@
 <template>
-  <button @click="toggle" :class="{ checked: value }"><span></span></button>
+  <button @click="toggle" :class="{ 'wo-checked': value }" class="wo-switch">
+    <span></span>
+  </button>
 </template>
 
 <script setup lang="ts">
@@ -12,10 +14,10 @@ const toggle = () => {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $bh: 22px;
 $sh: $bh - 4px;
-button {
+.wo-switch {
   width: $bh * 2;
   height: $bh;
   border: none;
@@ -23,6 +25,10 @@ button {
   background-color: #bfbfbf;
   position: relative;
   cursor: pointer;
+  &:focus,
+  &.wo-checked:focus {
+    outline: none;
+  }
   > span {
     width: $sh;
     height: $sh;
@@ -33,10 +39,10 @@ button {
     background-color: white;
     transition: all 250ms;
   }
-  &.checked {
+  &.wo-checked {
     background-color: #5993f9;
   }
-  &.checked > span {
+  &.wo-checked > span {
     left: calc(100% - #{$sh} - 2px);
   }
   &:active {
@@ -44,7 +50,7 @@ button {
       width: calc(#{$sh} + 4px);
     }
   }
-  &.checked:active {
+  &.wo-checked:active {
     > span {
       width: calc(#{$sh} + 4px);
       margin-left: -4px;
