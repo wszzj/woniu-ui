@@ -1,21 +1,23 @@
 <template>
   <template v-if="visible">
-    <div class="wo-dialog-overlay" @click="OnClickOverlay"></div>
-    <div class="wo-dialog-wrapper">
-      <div class="wo-dialog">
-        <header class="wo-header">
-          <slot name="title"></slot>
-          <span class="wo-close" @click="close">X</span>
-        </header>
-        <main>
-          <slot name="content"></slot>
-        </main>
-        <footer class="wo-footer">
-          <Button @click="cancel">取消</Button>
-          <Button level="primary" @click="confirm">确认</Button>
-        </footer>
+    <Teleport to="#app">
+      <div class="wo-dialog-overlay" @click="OnClickOverlay"></div>
+      <div class="wo-dialog-wrapper">
+        <div class="wo-dialog">
+          <header class="wo-header">
+            <slot name="title"></slot>
+            <span class="wo-close" @click="close">X</span>
+          </header>
+          <main>
+            <slot name="content"></slot>
+          </main>
+          <footer class="wo-footer">
+            <Button @click="cancel">取消</Button>
+            <Button level="primary" @click="confirm">确认</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
 
