@@ -1,7 +1,13 @@
 <template>
-  <div>Tab</div>
+  <div>
+    <slot></slot>
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// const props = defineProps<{
+//   title: string;
+// }>();
+</script>
 
 <style lang="scss"></style>
