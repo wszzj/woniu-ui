@@ -18,10 +18,10 @@ const toggle = () => {
 $bh: 22px;
 $sh: $bh - 4px;
 .wo-switch {
-  width: $bh * 2;
+  width: calc($bh * 2);
   height: $bh;
   border: none;
-  border-radius: $bh / 2;
+  border-radius: calc($bh / 2);
   background-color: #bfbfbf;
   position: relative;
   cursor: pointer;
@@ -32,7 +32,7 @@ $sh: $bh - 4px;
   > span {
     width: $sh;
     height: $sh;
-    border-radius: $sh / 2;
+    border-radius: calc($sh / 2);
     position: absolute;
     left: 2px;
     top: 2px;
