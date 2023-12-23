@@ -13,8 +13,8 @@
           <p>内容3</p>
         </main>
         <footer class="wo-footer">
-          <Button>取消</Button>
-          <Button level="primary">确认</Button>
+          <Button @click="cancel">取消</Button>
+          <Button level="primary" @click="confirm">确认</Button>
         </footer>
       </div>
     </div>
@@ -26,18 +26,34 @@ import Button from "@/lib/Button.vue";
 export interface Props {
   visible?: boolean;
   closeOnClickOverlay?: boolean;
+  cancel?: Function;
+  confirm?: Function;
 }
 const props = withDefaults(defineProps<Props>(), {
   visible: false,
   closeOnClickOverlay: true,
 });
 
-const emit = defineEmits<{ (e: "update:visible", value: boolean): void }>();
+const emit = defineEmits<{
+  (e: "update:visible", value: boolean): void;
+  (e: "cancel"): void;
+  (e: "confirm", value: boolean): void;
+}>();
 const close = () => {
   emit("update:visible", false);
 };
 const OnClickOverlay = () => {
   if (props.closeOnClickOverlay) {
+    close();
+  }
+};
+const cancel = () => {
+  if (props.cancel?.() !== false) {
+    close();
+  }
+};
+const confirm = () => {
+  if (props.confirm?.() !== false) {
     close();
   }
 };
