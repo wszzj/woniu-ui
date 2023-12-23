@@ -1,26 +1,46 @@
 <template>
-  <div class="wo-dialog-overlay"></div>
-  <div class="wo-dialog-wrapper">
-    <div class="wo-dialog">
-      <header class="wo-header">
-        <h2 class="wo-title">标题</h2>
-        <span class="wo-close">X</span>
-      </header>
-      <main>
-        <p>内容1</p>
-        <p>内容2</p>
-        <p>内容3</p>
-      </main>
-      <footer class="wo-footer">
-        <Button>取消</Button>
-        <Button level="primary">确认</Button>
-      </footer>
+  <template v-if="visible">
+    <div class="wo-dialog-overlay" @click="OnClickOverlay"></div>
+    <div class="wo-dialog-wrapper">
+      <div class="wo-dialog">
+        <header class="wo-header">
+          <h2 class="wo-title">标题</h2>
+          <span class="wo-close" @click="close">X</span>
+        </header>
+        <main>
+          <p>内容1</p>
+          <p>内容2</p>
+          <p>内容3</p>
+        </main>
+        <footer class="wo-footer">
+          <Button>取消</Button>
+          <Button level="primary">确认</Button>
+        </footer>
+      </div>
     </div>
-  </div>
+  </template>
 </template>
 
 <script setup lang="ts">
 import Button from "@/lib/Button.vue";
+export interface Props {
+  visible?: boolean;
+  closeOnClickOverlay?: boolean;
+}
+const props = withDefaults(defineProps<Props>(), {
+  visible: false,
+  closeOnClickOverlay: true,
+});
+
+const emit = defineEmits<{ (e: "update:visible", value: boolean): void }>();
+const close = () => {
+  emit("update:visible", false);
+};
+const OnClickOverlay = () => {
+  if (props.closeOnClickOverlay) {
+    close();
+  }
+};
 </script>
 
 <style lang="scss">
