@@ -7,7 +7,11 @@
         class="wo-tabs-item"
         :class="{ selected: selected === t }"
         @click="select(t)"
-        ref="items"
+        :ref="
+          (el) => {
+            if (t === selected) selectedEl = el;
+          }
+        "
       >
         {{ t }}
       </div>
@@ -21,9 +25,10 @@
 
 <script setup lang="ts">
 import Tab from "@/lib/Tab.vue";
-import { VNode, computed, onMounted, onUpdated, ref, watchEffect } from "vue";
+import { VNode, computed, ref, watchEffect } from "vue";
 const underline = ref<HTMLDivElement>();
 const container = ref<HTMLDivElement>();
+const selectedEl = ref<HTMLDivElement>();
 
 const props = defineProps<{
   selected: string;
@@ -55,27 +60,9 @@ const current = computed(() => {
 const select = (title: string) => {
   emit("update:selected", title);
 };
-const items = ref<HTMLDivElement[]>([]);
-onMounted(() => {
-  const divs = items.value;
-  const result = divs.find((el) => {
-    return el.classList.contains("selected");
-  });
-  if (result && underline.value && container.value) {
-    const { width, left: left1 } = result.getBoundingClientRect();
-    underline.value.style.width = width + "px";
-    const { left: left2 } = container.value.getBoundingClientRect();
-    const left = left1 - left2;
-    underline.value.style.left = left + "px";
-  }
-});
-onUpdated(() => {
-  const divs = items.value;
-  const result = divs.find((el) => {
-    return el.classList.contains("selected");
-  });
-  if (result && underline.value && container.value) {
-    const { width, left: left1 } = result.getBoundingClientRect();
+watchEffect(() => {
+  if (selectedEl.value && underline.value && container.value) {
+    const { width, left: left1 } = selectedEl.value.getBoundingClientRect();
     underline.value.style.width = width + "px";
     const { left: left2 } = container.value.getBoundingClientRect();
     const left = left1 - left2;
