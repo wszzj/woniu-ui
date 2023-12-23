@@ -1,20 +1,31 @@
 <template>
   <div class="wo-tabs">
     <div class="wo-tabs-nav">
-      <div v-for="(t, i) in titles" :key="i" class="wo-tabs-item selected">
+      <div
+        v-for="(t, i) in titles"
+        :key="i"
+        class="wo-tabs-item"
+        :class="{ selected: selected === t }"
+        @click="select(t)"
+      >
         {{ t }}
       </div>
     </div>
     <div class="wo-tabs-content">
-      <component v-for="(el, i) in defaults" :is="el" :key="i" />
+      <component :is="current" :key="selected" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import Tab from "@/lib/Tab.vue";
-import { VNode } from "vue";
-
+import { VNode, computed } from "vue";
+const props = defineProps<{
+  selected: string;
+}>();
+const emit = defineEmits<{
+  (e: "update:selected", title: string): void;
+}>();
 const slots = defineSlots<{
   default(): any;
 }>();
@@ -29,6 +40,16 @@ const titles = defaults.map((element: VNode) => {
     return element.props.title;
   }
 });
+const current = computed(() => {
+  return defaults.filter((element: VNode) => {
+    if (element.props) {
+      return element.props.title === props.selected;
+    }
+  })[0];
+});
+const select = (title: string) => {
+  emit("update:selected", title);
+};
 </script>
 
 <style lang="scss">
@@ -50,16 +71,17 @@ const titles = defaults.map((element: VNode) => {
     > .wo-tabs-item {
       margin-right: 16px;
       position: relative;
-
+      cursor: pointer;
       &.selected {
+        color: #3a74f9;
         &::after {
           content: "";
           position: absolute;
           bottom: -8px;
           left: 0;
-          height: 1px;
+          height: 2px;
           width: 30px;
-          background-color: red;
+          background-color: #3a74f9;
           z-index: 2;
         }
       }
