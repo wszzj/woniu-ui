@@ -1,6 +1,6 @@
 <template>
   <div class="wo-tabs">
-    <div class="wo-tabs-nav">
+    <div class="wo-tabs-nav" ref="container">
       <div
         v-for="(t, i) in titles"
         :key="i"
@@ -21,8 +21,10 @@
 
 <script setup lang="ts">
 import Tab from "@/lib/Tab.vue";
-import { VNode, computed, onMounted, ref } from "vue";
+import { VNode, computed, onMounted, onUpdated, ref, watchEffect } from "vue";
 const underline = ref<HTMLDivElement>();
+const container = ref<HTMLDivElement>();
+
 const props = defineProps<{
   selected: string;
 }>();
@@ -59,11 +61,25 @@ onMounted(() => {
   const result = divs.find((el) => {
     return el.classList.contains("selected");
   });
-  if (result && underline.value) {
-    const { width } = result.getBoundingClientRect();
-    console.log(width);
-
+  if (result && underline.value && container.value) {
+    const { width, left: left1 } = result.getBoundingClientRect();
     underline.value.style.width = width + "px";
+    const { left: left2 } = container.value.getBoundingClientRect();
+    const left = left1 - left2;
+    underline.value.style.left = left + "px";
+  }
+});
+onUpdated(() => {
+  const divs = items.value;
+  const result = divs.find((el) => {
+    return el.classList.contains("selected");
+  });
+  if (result && underline.value && container.value) {
+    const { width, left: left1 } = result.getBoundingClientRect();
+    underline.value.style.width = width + "px";
+    const { left: left2 } = container.value.getBoundingClientRect();
+    const left = left1 - left2;
+    underline.value.style.left = left + "px";
   }
 });
 </script>
@@ -100,6 +116,7 @@ onMounted(() => {
       width: 50px;
       background-color: #3a74f9;
       z-index: 2;
+      transition: all 250ms;
     }
   }
   > .wo-tabs-content {
