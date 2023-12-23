@@ -4,13 +4,11 @@
     <div class="wo-dialog-wrapper">
       <div class="wo-dialog">
         <header class="wo-header">
-          <h2 class="wo-title">标题</h2>
+          <slot name="title"></slot>
           <span class="wo-close" @click="close">X</span>
         </header>
         <main>
-          <p>内容1</p>
-          <p>内容2</p>
-          <p>内容3</p>
+          <slot name="content"></slot>
         </main>
         <footer class="wo-footer">
           <Button @click="cancel">取消</Button>
