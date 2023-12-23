@@ -25,10 +25,17 @@
 
 <script setup lang="ts">
 import Tab from "@/lib/Tab.vue";
-import { VNode, computed, ref, watchEffect } from "vue";
-const underline = ref<HTMLDivElement>();
-const container = ref<HTMLDivElement>();
-const selectedEl = ref<HTMLDivElement>();
+import {
+  ComponentOptions,
+  VNode,
+  computed,
+  onMounted,
+  ref,
+  watchEffect,
+} from "vue";
+const underline = ref<HTMLDivElement | null>(null);
+const container = ref<HTMLDivElement | null>(null);
+const selectedEl = ref<ComponentOptions | null>(null);
 
 const props = defineProps<{
   selected: string;
@@ -60,14 +67,16 @@ const current = computed(() => {
 const select = (title: string) => {
   emit("update:selected", title);
 };
-watchEffect(() => {
-  if (selectedEl.value && underline.value && container.value) {
-    const { width, left: left1 } = selectedEl.value.getBoundingClientRect();
-    underline.value.style.width = width + "px";
-    const { left: left2 } = container.value.getBoundingClientRect();
-    const left = left1 - left2;
-    underline.value.style.left = left + "px";
-  }
+onMounted(() => {
+  watchEffect(() => {
+    if (selectedEl.value && underline.value && container.value) {
+      const { width, left: left1 } = selectedEl.value.getBoundingClientRect();
+      underline.value.style.width = width + "px";
+      const { left: left2 } = container.value.getBoundingClientRect();
+      const left = left1 - left2;
+      underline.value.style.left = left + "px";
+    }
+  });
 });
 </script>
 
