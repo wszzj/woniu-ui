@@ -7,9 +7,11 @@
         class="wo-tabs-item"
         :class="{ selected: selected === t }"
         @click="select(t)"
+        ref="items"
       >
         {{ t }}
       </div>
+      <div class="wo-tabs-underline" ref="underline"></div>
     </div>
     <div class="wo-tabs-content">
       <component :is="current" :key="selected" />
@@ -19,7 +21,8 @@
 
 <script setup lang="ts">
 import Tab from "@/lib/Tab.vue";
-import { VNode, computed } from "vue";
+import { VNode, computed, onMounted, ref } from "vue";
+const underline = ref<HTMLDivElement>();
 const props = defineProps<{
   selected: string;
 }>();
@@ -50,6 +53,19 @@ const current = computed(() => {
 const select = (title: string) => {
   emit("update:selected", title);
 };
+const items = ref<HTMLDivElement[]>([]);
+onMounted(() => {
+  const divs = items.value;
+  const result = divs.find((el) => {
+    return el.classList.contains("selected");
+  });
+  if (result && underline.value) {
+    const { width } = result.getBoundingClientRect();
+    console.log(width);
+
+    underline.value.style.width = width + "px";
+  }
+});
 </script>
 
 <style lang="scss">
@@ -74,17 +90,16 @@ const select = (title: string) => {
       cursor: pointer;
       &.selected {
         color: #3a74f9;
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: -8px;
-          left: 0;
-          height: 2px;
-          width: 30px;
-          background-color: #3a74f9;
-          z-index: 2;
-        }
       }
+    }
+    > .wo-tabs-underline {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      height: 3px;
+      width: 50px;
+      background-color: #3a74f9;
+      z-index: 2;
     }
   }
   > .wo-tabs-content {
