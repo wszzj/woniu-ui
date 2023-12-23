@@ -9,11 +9,11 @@
 import { computed } from "vue";
 
 export interface Props {
-  theme: string;
-  level: string;
-  size: string;
-  disabled: boolean;
-  loading: boolean;
+  theme?: string;
+  level?: string;
+  size?: string;
+  disabled?: boolean;
+  loading?: boolean;
 }
 const props = withDefaults(defineProps<Props>(), {
   theme: "default",
@@ -38,7 +38,6 @@ $blue: #3a74f9;
 .wo-button {
   padding: 6px 16px;
   border-radius: 6px;
-  margin: 12px;
   display: inline-flex;
   flex-direction: row;
   white-space: nowrap;

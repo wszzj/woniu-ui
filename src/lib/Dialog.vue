@@ -1,20 +1,73 @@
 <template>
   <div class="wo-dialog-overlay"></div>
   <div class="wo-dialog-wrapper">
-    <header>
-      <span class="title">标题</span>
-      <span class="close">x</span>
-    </header>
-    <main>内容</main>
-    <footer>
-      <Button>确认</Button>
-      <Button>取消</Button>
-    </footer>
+    <div class="wo-dialog">
+      <header class="wo-header">
+        <h2 class="wo-title">标题</h2>
+        <span class="wo-close">X</span>
+      </header>
+      <main>
+        <p>内容1</p>
+        <p>内容2</p>
+        <p>内容3</p>
+      </main>
+      <footer class="wo-footer">
+        <Button>取消</Button>
+        <Button level="primary">确认</Button>
+      </footer>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Button from "./Button.vue";
+import Button from "@/lib/Button.vue";
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.wo-dialog-overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+  overflow: auto;
+  outline: 0;
+  z-index: 10;
+}
+.wo-dialog-wrapper {
+  position: relative;
+  z-index: 15;
+  background-color: #fff;
+  position: fixed;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  padding: 20px;
+  > .wo-dialog {
+    padding: 12px;
+    > .wo-header {
+      display: flex;
+      justify-content: space-between;
+      > .wo-title {
+        font-size: 20px;
+        font-weight: 600;
+        padding-bottom: 12px;
+      }
+      > .wo-close {
+        cursor: pointer;
+      }
+    }
+    > .wo-footer {
+      text-align: end;
+      padding-top: 12px;
+      > .wo-button {
+        margin-left: 12px;
+      }
+    }
+  }
+}
+</style>
