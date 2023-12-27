@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 import { inject } from "vue";
-import SnailLogoComponent from "../assets/logos/snail.svg";
+import SnailLogoComponent from "../assets/logos/snail.svg?component";
 import SwitchIconComponent from "../assets/icons/switchIcon.svg?component";
 import GithubIconComponent from "../assets/icons/github.svg?component";
 
