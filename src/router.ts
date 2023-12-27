@@ -2,6 +2,7 @@ import { createWebHashHistory, createRouter } from "vue-router";
 import Home from "./views/Home.vue";
 import Doc from "./views/Doc.vue";
 import Intro from "./views/Intro.vue";
+import Install from "./views/Install.vue";
 import GetStart from "./views/GetStart.vue";
 import ButtonDemo from "./components/doc/ButtonDemo.vue";
 import SwitchDemo from "./components/doc/SwitchDemo.vue";
@@ -24,6 +25,10 @@ export const router = createRouter({
         {
           path: "intro",
           component: Intro,
+        },
+        {
+          path: "install",
+          component: Install,
         },
         {
           path: "get-start",

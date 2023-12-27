@@ -5,15 +5,16 @@
       <aside v-if="asideVisible">
         <h3>文档</h3>
         <ul>
-          <li><router-link to="/doc/intro">介绍 </router-link></li>
-          <li><router-link to="/doc/get-start">开始使用 </router-link></li>
+          <li><router-link to="/doc/intro">介绍</router-link></li>
+          <li><router-link to="/doc/install">安装</router-link></li>
+          <li><router-link to="/doc/get-start">开始使用</router-link></li>
         </ul>
         <h3>组件列表</h3>
         <ul>
-          <li><router-link to="/doc/switch">Switch组件 </router-link></li>
-          <li><router-link to="/doc/button">Button组件 </router-link></li>
-          <li><router-link to="/doc/dialog">Dialog组件 </router-link></li>
-          <li><router-link to="/doc/tabs">Tabs组件 </router-link></li>
+          <li><router-link to="/doc/switch">Switch组件</router-link></li>
+          <li><router-link to="/doc/button">Button组件</router-link></li>
+          <li><router-link to="/doc/dialog">Dialog组件</router-link></li>
+          <li><router-link to="/doc/tabs">Tabs组件</router-link></li>
         </ul>
       </aside>
       <main>
