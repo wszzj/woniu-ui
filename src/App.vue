@@ -28,4 +28,7 @@ router.afterEach(() => {
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
 }
+body {
+  background-color: #fff;
+}
 </style>

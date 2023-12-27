@@ -39,15 +39,17 @@ const props = defineProps<{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   padding: 32px;
   font-size: 16px;
   box-shadow: 0 1px fade-out($color: #000000, $amount: 0.95);
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+
   z-index: 100;
   height: 50px;
+  background-color: #fff;
   .switchIcon {
     display: none;
   }
@@ -60,7 +62,7 @@ const props = defineProps<{
     > .logo {
       width: 48px;
       height: 48px;
-      color: #8be4d4;
+      color: #3d83c5;
     }
     > .name {
       font-size: 18px;
@@ -92,6 +94,7 @@ const props = defineProps<{
     }
   }
   @media (max-width: 500px) {
+    padding-left: 0px;
     > ol {
       display: none;
     }

@@ -2,6 +2,8 @@
   <div class="main">
     <top-nav :switchIconVisible="switchIconVisible" />
     <div class="banner">
+      <div class="leftCircle"></div>
+      <div class="rightCircle"></div>
       <h1>蜗牛UI</h1>
       <h3>一个轻量化的UI组件库</h3>
       <div class="link">
@@ -32,6 +34,7 @@
         </li>
       </ul>
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -48,32 +51,79 @@ const switchIconVisible = ref<boolean>(false);
 
 <style lang="scss" scoped>
 .main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   > .banner {
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 1px fade-out($color: #000000, $amount: 0.95);
+    > .leftCircle {
+      position: absolute;
+      top: 20px;
+      left: -46px;
+      width: 150px;
+      height: 150px;
+      background: rgb(139, 228, 208);
+      background: linear-gradient(
+        90deg,
+        rgba(139, 228, 208, 1) 0%,
+        rgba(255, 255, 255, 1) 100%
+      );
+      border-radius: 80% 15%;
+    }
+    > .rightCircle {
+      position: absolute;
+      bottom: -20px;
+      right: -56px;
+      width: 150px;
+      height: 150px;
+      background: rgb(139, 228, 208);
+      background: linear-gradient(
+        90deg,
+        rgba(139, 228, 208, 1) 0%,
+        rgba(255, 255, 255, 1) 100%
+      );
+      border-radius: 80% 15%;
+    }
+
+    @media (max-width: 500px) {
+    }
     > h1 {
-      padding: 100px 0 25px 0;
+      font-size: 48px;
+      padding: 120px 0 25px 0;
       font-weight: 600;
     }
     > h3 {
-      font-size: 16px;
+      font-size: 18px;
     }
     > .link {
-      padding: 16px;
+      padding: 32px;
       > a {
         margin: 12px;
+        &:first-child {
+          > Button {
+            background-color: #3246a0;
+          }
+        }
       }
     }
   }
 
   > .feature {
+    margin: 24px;
+    padding: 0 16px;
+    flex-grow: 1;
     > ul {
       display: flex;
       flex-wrap: wrap;
-      margin: 32px;
-      padding: 0 16px;
+
       > li {
         width: 100%;
         display: grid;
@@ -83,6 +133,7 @@ const switchIconVisible = ref<boolean>(false);
           "logo text";
         grid-template-columns: 100px auto;
         grid-template-rows: 1fr auto;
+
         > h3 {
           grid-area: title;
           font-size: 28px;
@@ -98,10 +149,19 @@ const switchIconVisible = ref<boolean>(false);
         }
       }
     }
-  }
-  > footer {
-    > .cp {
-      text-align: center;
+    @media (min-width: 800px) {
+      > ul {
+        > li {
+          width: 50%;
+        }
+      }
+    }
+    @media (min-width: 1200px) {
+      > ul {
+        > li {
+          width: 33.3333%;
+        }
+      }
     }
   }
 }
