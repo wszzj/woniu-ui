@@ -1,6 +1,6 @@
 <template>
   <div>
-    <top-nav />
+    <top-nav :switchIconVisible="switchIconVisible" />
     <main>
       <h1>蜗牛UI</h1>
       <h2>一个轻量化的UI组件库</h2>
@@ -18,6 +18,8 @@
 
 <script lang="ts" setup>
 import TopNav from "@/components/TopNav.vue";
+import { ref } from "vue";
+const switchIconVisible = ref<boolean>(false);
 </script>
 
 <style lang="scss" scoped>
@@ -26,7 +28,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 64px;
+
   align-items: center;
   > h1 {
     padding-top: 48px;

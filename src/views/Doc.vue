@@ -1,6 +1,6 @@
 <template>
   <div class="docWrapper">
-    <top-nav class="nav" />
+    <top-nav class="nav" :switchIconVisible="true" />
     <div class="content">
       <aside v-if="asideVisible">
         <h3>组件列表</h3>
@@ -65,6 +65,7 @@ aside {
   top: 0;
   padding-top: 70px;
   height: 100%;
+  z-index: 10;
   > h3 {
     margin-bottom: 4px;
   }

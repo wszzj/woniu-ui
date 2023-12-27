@@ -7,6 +7,7 @@ import ButtonDemo from "./components/doc/ButtonDemo.vue";
 import SwitchDemo from "./components/doc/SwitchDemo.vue";
 import DialogDemo from "./components/doc/DialogDemo.vue";
 import TabsDemo from "./components/doc/TabsDemo.vue";
+import NotFound from "./views/NotFound.vue";
 const history = createWebHashHistory();
 export const router = createRouter({
   history: history,
@@ -45,6 +46,10 @@ export const router = createRouter({
           component: TabsDemo,
         },
       ],
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      component: NotFound,
     },
   ],
 });

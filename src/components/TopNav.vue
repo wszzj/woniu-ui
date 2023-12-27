@@ -1,6 +1,10 @@
 <template>
   <header class="topNav">
-    <SwitchIconComponent class="svg-icon cut" @click="toggleAside" />
+    <SwitchIconComponent
+      class="svg-icon switchIcon"
+      @click="toggleAside"
+      v-if="switchIconVisible"
+    />
     <router-link to="/" class="logoWrapper">
       <SnailLogoComponent class="svg-icon logo" />
       <h1 class="name">蜗牛UI</h1>
@@ -25,6 +29,9 @@ import GithubIconComponent from "../assets/icons/github.svg?component";
 
 import { toggleAsideKey } from "../keys";
 const toggleAside = inject(toggleAsideKey);
+const props = defineProps<{
+  switchIconVisible?: boolean;
+}>();
 </script>
 
 <style lang="scss" scoped>
@@ -39,9 +46,9 @@ const toggleAside = inject(toggleAsideKey);
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 5;
+  z-index: 100;
   height: 50px;
-  .cut {
+  .switchIcon {
     display: none;
   }
   > .logoWrapper {
@@ -91,7 +98,7 @@ const toggleAside = inject(toggleAsideKey);
     > .logoWrapper {
       margin: 0 auto;
     }
-    > .cut {
+    > .switchIcon {
       display: inline-block;
       position: absolute;
       left: 20px;
