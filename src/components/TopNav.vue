@@ -5,10 +5,9 @@
       <SnailLogoComponent class="svg-icon logo" />
       <h1 class="name">蜗牛UI</h1>
     </router-link>
-
     <ol>
       <li><router-link to="/doc/intro">介绍</router-link></li>
-      <li><router-link to="/doc/use">使用</router-link></li>
+      <li><router-link to="/doc/get-start">使用</router-link></li>
       <li>
         <a href="https://wszzj.github.io/woniu-ui/">
           <GithubIconComponent class="svg-icon github" />
@@ -54,6 +53,7 @@ const toggleAside = inject(toggleAsideKey);
     > .logo {
       width: 48px;
       height: 48px;
+      color: #8be4d4;
     }
     > .name {
       font-size: 18px;
@@ -93,7 +93,12 @@ const toggleAside = inject(toggleAsideKey);
     }
     > .cut {
       display: inline-block;
-      color: #e3e3e3;
+      position: absolute;
+      left: 20px;
+      top: 32px;
+      transform: translateY(-50%);
+      width: 1.4em;
+      height: 1.4em;
     }
   }
 }
