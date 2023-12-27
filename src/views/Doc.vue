@@ -3,6 +3,11 @@
     <top-nav class="nav" :switchIconVisible="true" />
     <div class="content">
       <aside v-if="asideVisible">
+        <h3>文档</h3>
+        <ul>
+          <li><router-link to="/doc/intro">介绍 </router-link></li>
+          <li><router-link to="/doc/get-start">开始使用 </router-link></li>
+        </ul>
         <h3>组件列表</h3>
         <ul>
           <li><router-link to="/doc/switch">Switch组件 </router-link></li>
@@ -37,6 +42,25 @@ const asideVisible = inject(asideVisibleKey);
     flex-grow: 1;
     padding-top: 60px;
     padding-left: 156px;
+    > aside {
+      > h3 {
+        font-size: 24px;
+      }
+      > ul {
+        > li {
+          > .router-link-active {
+            color: #8be4d4;
+          }
+          > a {
+            font-size: 16px;
+            &:hover,
+            &focus {
+              color: #8be4d4;
+            }
+          }
+        }
+      }
+    }
     @media (max-width: 500px) {
       padding-left: 0;
       padding-top: 50px;
@@ -57,7 +81,8 @@ const asideVisible = inject(asideVisibleKey);
   }
 }
 aside {
-  background-color: green;
+  background-color: #fff;
+  box-shadow: 0px 2px 2px fade-out($color: #000000, $amount: 0.8);
   width: 150px;
   padding: 16px;
   position: fixed;
