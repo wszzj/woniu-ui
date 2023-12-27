@@ -22,11 +22,12 @@ import TopNav from "@/components/TopNav.vue";
 
 <style lang="scss" scoped>
 main {
+  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 64px;
   align-items: center;
-  background-color: green;
   > h1 {
     padding-top: 48px;
   }
