@@ -1,16 +1,34 @@
 <template>
-  <button @click="toggle" :class="{ 'wo-checked': value }" class="wo-switch">
+  <button
+    :class="{ 'wo-checked': value }"
+    class="wo-switch"
+    :disable="disable"
+    ref="x"
+    @click="toggle"
+  >
     <span></span>
   </button>
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
+import { ref } from "vue";
+
+export interface Props {
   value: boolean;
+  disable?: boolean;
+}
+const x = ref<HTMLButtonElement | null>(null);
+const props = withDefaults(defineProps<Props>(), {
+  value: false,
+  disable: false,
+});
+const emit = defineEmits<{
+  (e: "update:value", value: boolean): void;
 }>();
-const emit = defineEmits(["update:value"]);
 const toggle = () => {
-  emit("update:value", !props.value);
+  if (!props.disable) {
+    emit("update:value", !props.value);
+  }
 };
 </script>
 
@@ -55,6 +73,10 @@ $sh: $bh - 4px;
       width: calc(#{$sh} + 4px);
       margin-left: -4px;
     }
+  }
+  &[disable="true"] {
+    cursor: not-allowed;
+    opacity: 0.65;
   }
 }
 </style>

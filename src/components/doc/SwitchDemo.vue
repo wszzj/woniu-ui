@@ -2,6 +2,8 @@
   <div>Switch示例</div>
   <h1>示例1</h1>
   <Switch v-model:value="bool" />
+  <h1>示例2</h1>
+  <Switch v-model:value="bool" disable />
 </template>
 
 <script setup lang="ts">

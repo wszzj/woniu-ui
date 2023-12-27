@@ -1,5 +1,5 @@
 <template>
-  <button :class="classes" class="wo-button">
+  <button :class="classes" class="wo-button" :disabled="disabled">
     <span class="wo-loading-circle" v-if="loading"></span>
     <slot></slot>
   </button>
@@ -27,7 +27,6 @@ const classes = computed(() => {
     [`wo-theme-${props.theme}`]: props.theme,
     [`wo-level-${props.level}`]: props.level,
     [`wo-size-${props.size}`]: props.size,
-    "wo-disabled": props.disabled,
     "wo-loading": props.loading,
   };
 });
@@ -103,7 +102,7 @@ $blue: #3a74f9;
   &.wo-size-big {
     font-size: 24px;
   }
-  &.wo-disabled {
+  &[disabled] {
     cursor: not-allowed;
     background-color: #f5f5f5;
     color: #b8b8b8;
