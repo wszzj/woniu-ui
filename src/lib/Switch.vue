@@ -2,8 +2,7 @@
   <button
     :class="{ 'wo-checked': value }"
     class="wo-switch"
-    :disable="disable"
-    ref="x"
+    :disabled="disabled"
     @click="toggle"
   >
     <span></span>
@@ -11,22 +10,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-
 export interface Props {
   value: boolean;
-  disable?: boolean;
+  disabled?: boolean;
 }
-const x = ref<HTMLButtonElement | null>(null);
 const props = withDefaults(defineProps<Props>(), {
   value: false,
-  disable: false,
+  disabled: false,
 });
 const emit = defineEmits<{
   (e: "update:value", value: boolean): void;
 }>();
 const toggle = () => {
-  if (!props.disable) {
+  if (!props.disabled) {
     emit("update:value", !props.value);
   }
 };
@@ -74,7 +70,7 @@ $sh: $bh - 4px;
       margin-left: -4px;
     }
   }
-  &[disable="true"] {
+  &[disabled="true"] {
     cursor: not-allowed;
     opacity: 0.65;
   }
