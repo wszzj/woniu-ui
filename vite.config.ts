@@ -3,9 +3,17 @@ import vue from "@vitejs/plugin-vue";
 import path from "path";
 
 import svgLoader from "vite-svg-loader";
-
+import Markdown from "vite-plugin-md";
 export default defineConfig({
-  plugins: [vue(), svgLoader()],
+  plugins: [
+    vue({
+      include: [/\.vue$/, /\.md$/],
+    }),
+    svgLoader(),
+    Markdown({
+      builders: [],
+    }),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
