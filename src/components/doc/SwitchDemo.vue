@@ -9,7 +9,7 @@
       <Button>查看代码</Button>
     </div>
     <div class="demo-code">
-      <pre>&lt;Switch v-model:value="bool" /&gt;</pre>
+      <Switch1Md />
     </div>
   </div>
   <div class="demo">
@@ -21,19 +21,17 @@
       <Button>查看代码</Button>
     </div>
     <div class="demo-code">
-      <pre>&lt;Switch v-model:value="bool" disable /&gt;</pre>
+      <Switch2Md />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import Switch from "@/lib/Switch.vue";
 import Button from "@/lib/Button.vue";
 import Switch1Demo from "./Switch1.demo.vue";
 import Switch2Demo from "./Switch2.demo.vue";
-
-const bool = ref(false);
+import Switch1Md from "../../markdowns/switch1.demo.md";
+import Switch2Md from "../../markdowns/switch2.demo.md";
 </script>
 
 <style lang="scss" scoped>
