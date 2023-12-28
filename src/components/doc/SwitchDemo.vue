@@ -56,6 +56,6 @@ import Switch2Md from "@/markdowns/switch2.demo.md";
   }
 }
 .markdown-body {
-  font-size: 24px;
+  font-size: 20px;
 }
 </style>
