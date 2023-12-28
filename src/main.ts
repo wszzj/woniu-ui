@@ -6,7 +6,6 @@ import hljs from "highlight.js/lib/core";
 import App from "./App.vue";
 import { router } from "./router";
 import Footer from "./components/Footer.vue";
-import Markdown from "./components/Markdown.vue";
 import "github-markdown-css";
 import "highlight.js/lib/common";
 import hljsVuePlugin from "@highlightjs/vue-plugin";
@@ -21,6 +20,5 @@ app.directive("highlight", function (el) {
 app.use(router);
 app.use(hljsVuePlugin);
 app.component("Footer", Footer);
-app.component("Markdown", Markdown);
 
 app.mount("#app");
