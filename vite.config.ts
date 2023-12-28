@@ -9,9 +9,7 @@ export default defineConfig({
       include: [/\.vue$/, /\.md$/],
     }),
     svgLoader(),
-    Markdown({
-      builders: [],
-    }),
+    Markdown(),
   ],
   resolve: {
     alias: {

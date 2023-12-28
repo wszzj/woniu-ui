@@ -70,7 +70,7 @@ $sh: $bh - 4px;
       margin-left: -4px;
     }
   }
-  &[disabled="true"] {
+  &[disabled] {
     cursor: not-allowed;
     opacity: 0.65;
   }

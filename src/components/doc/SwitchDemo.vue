@@ -9,7 +9,7 @@
       <Button>查看代码</Button>
     </div>
     <div class="demo-code">
-      <Switch1Md />
+      <pre v-highlight><Switch1Md /></pre>
     </div>
   </div>
   <div class="demo">
@@ -21,7 +21,7 @@
       <Button>查看代码</Button>
     </div>
     <div class="demo-code">
-      <Switch2Md />
+      <pre v-highlight><Switch2Md /></pre>
     </div>
   </div>
 </template>
@@ -30,8 +30,8 @@
 import Button from "@/lib/Button.vue";
 import Switch1Demo from "./Switch1.demo.vue";
 import Switch2Demo from "./Switch2.demo.vue";
-import Switch1Md from "../../markdowns/switch1.demo.md";
-import Switch2Md from "../../markdowns/switch2.demo.md";
+import Switch1Md from "@/markdowns/switch1.demo.md";
+import Switch2Md from "@/markdowns/switch2.demo.md";
 </script>
 
 <style lang="scss" scoped>
@@ -54,5 +54,8 @@ import Switch2Md from "../../markdowns/switch2.demo.md";
   &-action {
     padding: 12px 0 18px 0;
   }
+}
+.markdown-body {
+  font-size: 24px;
 }
 </style>
