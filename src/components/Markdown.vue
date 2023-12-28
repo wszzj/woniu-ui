@@ -1,8 +1,9 @@
 <template>
-  <component :is="content" />
+  <component :is="in" />
 </template>
 
 <script setup lang="ts">
+import intro from "../markdowns/Intro.md";
 import { shallowRef } from "vue";
 
 const props = defineProps<{
