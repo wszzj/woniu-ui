@@ -4,6 +4,7 @@ import path from "path";
 import svgLoader from "vite-svg-loader";
 import Markdown from "vite-plugin-md";
 export default defineConfig({
+  base: "/woniu-ui-website/",
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/],

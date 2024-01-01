@@ -13,7 +13,7 @@
       <li><router-link to="/doc/intro">介绍</router-link></li>
       <li><router-link to="/doc/get-start">使用</router-link></li>
       <li>
-        <a href="https://wszzj.github.io/woniu-ui/">
+        <a href="https://github.com/wszzj/woniu-ui">
           <GithubIconComponent class="svg-icon github" />
         </a>
       </li>
