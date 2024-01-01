@@ -6,9 +6,9 @@
       <Switch1Demo />
     </div>
     <div class="demo-action">
-      <Button>查看代码</Button>
+      <Button @click="toggleCode">查看代码</Button>
     </div>
-    <div class="demo-code">
+    <div class="demo-code" v-if="codeVisible">
       <pre v-highlight><Switch1Md /></pre>
     </div>
   </div>
@@ -18,9 +18,9 @@
       <Switch2Demo />
     </div>
     <div class="demo-action">
-      <Button>查看代码</Button>
+      <Button @click="toggleCode">查看代码</Button>
     </div>
-    <div class="demo-code">
+    <div class="demo-code" v-if="codeVisible">
       <pre v-highlight><Switch2Md /></pre>
     </div>
   </div>
@@ -32,6 +32,11 @@ import Switch1Demo from "./Switch1.demo.vue";
 import Switch2Demo from "./Switch2.demo.vue";
 import Switch1Md from "@/markdowns/switch1.demo.md";
 import Switch2Md from "@/markdowns/switch2.demo.md";
+import { ref } from "vue";
+const codeVisible = ref<boolean>(false);
+const toggleCode = () => {
+  codeVisible.value = !codeVisible.value;
+};
 </script>
 
 <style lang="scss" scoped>

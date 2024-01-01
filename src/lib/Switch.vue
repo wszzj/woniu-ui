@@ -73,6 +73,9 @@ $sh: $bh - 4px;
   &[disabled] {
     cursor: not-allowed;
     opacity: 0.65;
+    > span {
+      width: $sh;
+    }
   }
 }
 </style>
