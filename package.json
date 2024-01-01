@@ -1,6 +1,6 @@
 {
-  "name": "woniu-ui",
-  "private": true,
+  "name": "woniu-ui-1",
+  "private":false,
   "version": "0.0.1",
   "description": "ui组件库",
   "keyword": "ui components",
@@ -15,7 +15,7 @@
     }
   },
   "license": "MIT",
-  "author": "ZZJ",
+  "author": "wszzj2",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
