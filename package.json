@@ -2,26 +2,40 @@
   "name": "woniu-ui",
   "private": true,
   "version": "0.0.1",
+  "description": "ui组件库",
+  "keyword": "ui components",
+  "files": ["dist"],
+  "main": "./dist/woniu-ui.umd.cjs",
+  "module": "./dist/woniu-ui.js",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/woniu-ui.js",
+      "require": "./dist/woniu-ui.umd.cjs"
+    }
+  },
+  "license": "MIT",
+  "author": "ZZJ",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@highlightjs/vue-plugin": "^2.1.0",
-    "github-markdown-css": "^5.5.0",
-    "highlight.js": "^11.9.0",
     "vue": "^3.3.11",
-    "vue-router": "^4.2.5"
+    "@vitejs/plugin-vue": "^4.5.2"
+
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.5.2",
     "sass": "^1.69.5",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vite-plugin-md": "^0.21.5",
     "vite-svg-loader": "^5.1.0",
-    "vue-tsc": "^1.8.25"
+    "vue-tsc": "^1.8.25",
+    "@highlightjs/vue-plugin": "^2.1.0",
+    "github-markdown-css": "^5.5.0",
+    "highlight.js": "^11.9.0",
+    "vue-router": "^4.2.5"
   }
 }
