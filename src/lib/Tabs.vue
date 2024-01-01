@@ -2,18 +2,21 @@
   <div class="wo-tabs">
     <div class="wo-tabs-nav" ref="container">
       <div
-        v-for="(t, i) in titles"
+        v-for="(obj, i) in result"
         :key="i"
         class="wo-tabs-item"
-        :class="{ selected: selected === t }"
-        @click="select(t)"
+        :class="{
+          selected: selected === obj.title,
+        }"
+        @click="select(obj.title, obj.disabled)"
         :ref="
           (el) => {
-            if (t === selected) selectedEl = el;
+            if (obj.title === selected) selectedEl = el;
           }
         "
+        :disabled="obj.disabled"
       >
-        {{ t }}
+        {{ obj.title }}
       </div>
       <div class="wo-tabs-underline" ref="underline"></div>
     </div>
@@ -40,6 +43,7 @@ const selectedEl = ref<ComponentOptions | null>(null);
 const props = defineProps<{
   selected: string;
 }>();
+
 const emit = defineEmits<{
   (e: "update:selected", title: string): void;
 }>();
@@ -57,6 +61,18 @@ const titles = defaults.map((element: VNode) => {
     return element.props.title;
   }
 });
+const disableds = defaults.map((element: VNode) => {
+  if (element.props) {
+    return element.props.disabled;
+  }
+});
+const result = computed(() => {
+  const array = [];
+  for (let i = 0; i < titles.length; i++) {
+    array[i] = { title: titles[i], disabled: disableds[i] };
+  }
+  return array;
+});
 const current = computed(() => {
   return defaults.filter((element: VNode) => {
     if (element.props) {
@@ -64,7 +80,10 @@ const current = computed(() => {
     }
   })[0];
 });
-const select = (title: string) => {
+const select = (title: string, disabled: string) => {
+  if (disabled === "") {
+    return;
+  }
   emit("update:selected", title);
 };
 onMounted(() => {
@@ -103,13 +122,16 @@ onMounted(() => {
       &.selected {
         color: #3a74f9;
       }
+      &[disabled] {
+        cursor: not-allowed;
+        color: rgba(0, 0, 0, 0.25);
+      }
     }
     > .wo-tabs-underline {
       position: absolute;
       bottom: -1px;
       left: 0;
       height: 3px;
-      width: 50px;
       background-color: #3a74f9;
       z-index: 2;
       transition: all 250ms;
