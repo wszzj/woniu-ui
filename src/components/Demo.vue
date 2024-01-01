@@ -1,34 +1,32 @@
 <template>
-  <h1>Switch组件示例</h1>
-  <Demo title="常规用法">
-    <template #exampleCode>
-      <Switch1Demo />
-    </template>
-    <template #exampleMd>
-      <Switch1Md />
-    </template>
-  </Demo>
-  <Demo title="支持disabled">
-    <template #exampleCode>
-      <Switch2Demo />
-    </template>
-    <template #exampleMd>
-      <Switch2Md />
-    </template>
-  </Demo>
+  <div class="demo">
+    <h2>{{ title }}</h2>
+    <div class="demo-component">
+      <slot name="exampleCode"></slot>
+    </div>
+    <div class="demo-action">
+      <Button @click="toggleCode">查看代码</Button>
+    </div>
+    <div class="demo-code" v-if="codeVisible">
+      <pre v-highlight>
+        <slot name="exampleMd"></slot>
+      </pre>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 import Button from "@/lib/Button.vue";
 import Switch1Demo from "./Switch1.demo.vue";
-import Switch2Demo from "./Switch2.demo.vue";
 import Switch1Md from "@/markdowns/switch1.demo.md";
-import Switch2Md from "@/markdowns/switch2.demo.md";
 import { ref } from "vue";
 const codeVisible = ref<boolean>(false);
 const toggleCode = () => {
   codeVisible.value = !codeVisible.value;
 };
+const props = defineProps<{
+  title: string;
+}>();
 </script>
 
 <style lang="scss" scoped>

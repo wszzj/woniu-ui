@@ -29,4 +29,7 @@ a:focus,
 a:hover {
   color: #8be4d4;
 }
+.language-bash {
+  font-size: 16px;
+}
 </style>
