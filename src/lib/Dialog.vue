@@ -106,4 +106,9 @@ const confirm = () => {
     }
   }
 }
+@media (max-width: 500px) {
+  .wo-dialog-wrapper {
+    width: 85%;
+  }
+}
 </style>

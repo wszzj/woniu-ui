@@ -16,6 +16,11 @@
       <Tabs2Md />
     </template>
   </Demo>
+  <p>
+    返回首个组件：<a href="#/doc/switch">
+      <Button theme="link">Switch组件</Button></a
+    >
+  </p>
 </template>
 
 <script lang="ts" setup>

@@ -53,6 +53,7 @@ const switchIconVisible = ref<boolean>(false);
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 100%;
   > .banner {
     flex-shrink: 0;
     display: flex;
@@ -65,6 +66,7 @@ const switchIconVisible = ref<boolean>(false);
     box-shadow: 0 1px fade-out($color: #000000, $amount: 0.95);
     > .leftCircle {
       position: absolute;
+      z-index: -1;
       top: 20px;
       left: -46px;
       width: 150px;
@@ -79,6 +81,7 @@ const switchIconVisible = ref<boolean>(false);
     }
     > .rightCircle {
       position: absolute;
+      z-index: -1;
       bottom: -20px;
       right: -56px;
       width: 150px;

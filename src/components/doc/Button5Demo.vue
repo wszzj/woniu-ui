@@ -10,4 +10,9 @@ import Button from "@/lib/Button.vue";
 Button {
   margin-right: 16px;
 }
+@media (max-width: 600px) {
+  Button {
+    margin-bottom: 8px;
+  }
+}
 </style>
