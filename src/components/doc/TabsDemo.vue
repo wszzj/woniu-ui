@@ -1,17 +1,26 @@
 <template>
-  <div>Tabs示例</div>
-  <h1>示例1</h1>
-  <Tabs v-model:selected="title">
-    <Tab title="导航1">内容1</Tab>
-    <Tab title="导航2">内容2</Tab>
-  </Tabs>
+  <h1>Tabs组件示例</h1>
+  <Demo title="常规用法">
+    <template #exampleCode>
+      <Tabs1Demo />
+    </template>
+    <template #exampleMd>
+      <Tabs1Md />
+    </template>
+  </Demo>
+  <Demo title="支持disabled">
+    <template #exampleCode>
+      <Tabs2Demo />
+    </template>
+    <template #exampleMd>
+      <Tabs2Md />
+    </template>
+  </Demo>
 </template>
 
 <script lang="ts" setup>
-import Tabs from "@/lib/Tabs.vue";
-import Tab from "@/lib/Tab.vue";
-import { ref } from "vue";
-const title = ref("导航1");
+import Tabs1Demo from "./Tabs1Demo.vue";
+import Tabs1Md from "@/markdowns/tabs1.demo.md";
+import Tabs2Demo from "./Tabs2Demo.vue";
+import Tabs2Md from "@/markdowns/tabs2.demo.md";
 </script>
-
-<style lang="scss" scoped></style>

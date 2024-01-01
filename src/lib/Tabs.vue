@@ -92,7 +92,7 @@ onMounted(() => {
       bottom: 0;
       left: 0;
       height: 1px;
-      width: 300px;
+      width: 100%;
       background-color: #d9d9d9;
       z-index: 1;
     }
