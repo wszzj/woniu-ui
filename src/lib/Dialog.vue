@@ -69,11 +69,11 @@ const confirm = () => {
   left: 0;
   overflow: auto;
   outline: 0;
-  z-index: 10;
+  z-index: 150;
 }
 .wo-dialog-wrapper {
   position: relative;
-  z-index: 15;
+  z-index: 200;
   background-color: #fff;
   position: fixed;
   top: 200px;

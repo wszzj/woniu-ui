@@ -1,56 +1,29 @@
 <template>
-  <div>dialog示例</div>
-  <h1>示例1</h1>
-  <Button level="primary" @click="toggle">打开对话框</Button>
-  <Dialog
-    v-model:visible="visible"
-    :closeOnClickOverlay="false"
-    :cancel="cancel"
-    :confirm="confirm"
-  >
-    <template #title>
-      <div class="wo-title">标题</div>
+  <h1>Dialog组件示例</h1>
+  <Demo title="常规用法">
+    <template #exampleCode>
+      <Dialog1Demo />
     </template>
-    <template #content>
-      <p>内容。。。。。。。</p>
-      <p>内容。。。。。。。</p>
-      <p>内容。。。。。。。</p>
+    <template #exampleMd>
+      <Dialog1Md />
     </template>
-  </Dialog>
-  <h1>示例2</h1>
-  <Button level="primary" @click="showDialog">打开对话框</Button>
-  <Dialog></Dialog>
+  </Demo>
+  <Demo title="简洁用法">
+    <template #exampleCode>
+      <Dialog2Demo />
+    </template>
+    <template #exampleMd>
+      <Dialog2Md />
+    </template>
+  </Demo>
+  <p>
+    下一节：<a href="#/doc/tabs"> <Button theme="link">Tabs组件</Button></a>
+  </p>
 </template>
 
 <script setup lang="ts">
-import Dialog from "@/lib/Dialog.vue";
-import { openDialog } from "../../lib/openDialog.ts";
-
-import { ref } from "vue";
-const visible = ref(false);
-
-const toggle = () => {
-  visible.value = !visible.value;
-};
-const cancel = () => {
-  return true;
-};
-const confirm = () => {
-  return true;
-};
-const showDialog = () => {
-  openDialog({
-    title: "标题",
-    content: "内容。。。。。。。",
-    cancel: () => {
-      return true;
-    },
-    confirm: () => {
-      return true;
-    },
-    closeOnClickOverlay: false,
-  });
-};
+import Dialog1Demo from "./Dialog1Demo.vue";
+import Dialog1Md from "@/markdowns/dialog1.demo.md";
+import Dialog2Demo from "./Dialog2Demo.vue";
+import Dialog2Md from "@/markdowns/dialog2.demo.md";
 </script>
-
-<style></style>
