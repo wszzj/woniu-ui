@@ -12,7 +12,9 @@
       上。你也可以直接查看每个组件的源代码和示例，运行方法见 README.md。
     </p>
   </article>
-  <p>下一节：<a href="#/doc/install">安装</a></p>
+  <p>
+    下一节：<a href="#/doc/install"><Button theme="link">安装</Button></a>
+  </p>
 </template>
 
 <script setup lang="ts"></script>
@@ -21,12 +23,5 @@
 p:last-child {
   padding-top: 12px;
   font-size: 16px;
-}
-a {
-  text-decoration: underline;
-}
-a:focus,
-a:hover {
-  color: #8be4d4;
 }
 </style>

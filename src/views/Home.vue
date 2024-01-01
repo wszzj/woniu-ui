@@ -41,7 +41,6 @@
 <script lang="ts" setup>
 import TopNav from "@/components/TopNav.vue";
 import { ref } from "vue";
-import Button from "../lib/Button.vue";
 import VueLogoComponent from "../assets/logos/vue.svg?component";
 import TypescriptLogoComponent from "../assets/logos/typescript.svg?component";
 import ReadLogoComponent from "../assets/logos/read.svg?component";

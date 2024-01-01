@@ -12,7 +12,11 @@
       class="language-bash"
     ><code>yarn install woniu-ui</code></pre>
   </article>
-  <p>下一节：<a class="link" href="#/doc/get-start">开始使用</a></p>
+  <p>
+    下一节：<a class="link" href="#/doc/get-start">
+      <Button theme="link">开始使用</Button>
+    </a>
+  </p>
 </template>
 
 <script setup lang="ts"></script>
@@ -22,13 +26,7 @@ p:last-child {
   padding-top: 12px;
   font-size: 16px;
 }
-a {
-  text-decoration: underline;
-}
-a:focus,
-a:hover {
-  color: #8be4d4;
-}
+
 .language-bash {
   font-size: 16px;
 }

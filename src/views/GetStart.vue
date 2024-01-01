@@ -18,7 +18,11 @@
 import { Button } from "woniu-ui";
 &lt;/script&gt;</code></pre>
   </article>
-  <p>下一节：<a class="link" href="#/doc/switch">switch组件</a></p>
+  <p>
+    下一节：<a class="link" href="#/doc/switch">
+      <Button theme="link">Switch组件</Button>
+    </a>
+  </p>
 </template>
 
 <script setup lang="ts"></script>
@@ -33,12 +37,5 @@ import { Button } from "woniu-ui";
 p:last-child {
   padding-top: 12px;
   font-size: 16px;
-}
-a {
-  text-decoration: underline;
-}
-a:focus,
-a:hover {
-  color: #8be4d4;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <h1>Switch组件示例</h1>
-  <Demo title="常规用法">
+  <Demo title="基本用法">
     <template #exampleCode>
       <Switch1Demo />
     </template>
@@ -16,11 +16,12 @@
       <Switch2Md />
     </template>
   </Demo>
-  <p>下一节：<a href="#/doc/button">Button组件</a></p>
+  <p>
+    下一节：<a href="#/doc/button"> <Button theme="link">Button组件</Button></a>
+  </p>
 </template>
 
 <script setup lang="ts">
-import Button from "@/lib/Button.vue";
 import Switch1Demo from "./Switch1.demo.vue";
 import Switch2Demo from "./Switch2.demo.vue";
 import Switch1Md from "@/markdowns/switch1.demo.md";

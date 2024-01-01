@@ -63,6 +63,8 @@ $blue: #3a74f9;
     border: none;
     color: #000;
     box-shadow: none;
+    margin: 0;
+    padding: 0;
     &:focus,
     &:hover {
       background-color: #f0f0f0;
@@ -75,6 +77,8 @@ $blue: #3a74f9;
     border: none;
     color: #4096ff;
     box-shadow: none;
+    margin: 0;
+    padding: 0;
     &:focus,
     &:hover {
       color: lighten(#4096ff, 10%);

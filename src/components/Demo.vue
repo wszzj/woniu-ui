@@ -14,7 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import Button from "@/lib/Button.vue";
 import { ref } from "vue";
 const codeVisible = ref<boolean>(false);
 const toggleCode = () => {
