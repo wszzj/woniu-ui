@@ -9,7 +9,7 @@
     ><code>import {Button,Tabs, Tab, Switch, Dialog, openDialog} from "woniu-ui"</code></pre>
     <h2>Vue单文件组件(TS+setup)</h2>
     <p>代码示例</p>
-    <pre v-highlight class="language-javascript"><code>&lt;template&gt;
+    <pre v-highlight class="language-html"><code>&lt;template&gt;
   &lt;div&gt;
     &lt;Button&gt;按钮&lt;/Button&gt;
   &lt;/div&gt;
@@ -24,6 +24,9 @@ import { Button } from "woniu-ui";
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped>
+.language-html {
+  font-size: 16px;
+}
 .language-javascript {
   font-size: 16px;
 }

@@ -16,6 +16,7 @@
       <Switch2Md />
     </template>
   </Demo>
+  <p>下一节：<a href="#/doc/button">Button组件</a></p>
 </template>
 
 <script setup lang="ts">
@@ -32,27 +33,11 @@ const toggleCode = () => {
 </script>
 
 <style lang="scss" scoped>
-.demo {
-  border: 1px solid #d9d9d9;
-  padding: 12px;
-  margin: 24px 0;
-
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  > h2 {
-    padding: 6px 0;
-    border-bottom: 1px solid #d9d9d9;
-  }
-  &-component {
-    padding: 12px 0;
-  }
-
-  &-action {
-    padding: 12px 0 18px 0;
-  }
+a {
+  text-decoration: underline;
 }
-.markdown-body {
-  font-size: 20px;
+a:focus,
+a:hover {
+  color: #8be4d4;
 }
 </style>

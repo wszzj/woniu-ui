@@ -8,17 +8,13 @@
       <Button @click="toggleCode">查看代码</Button>
     </div>
     <div class="demo-code" v-if="codeVisible">
-      <pre v-highlight>
-        <slot name="exampleMd"></slot>
-      </pre>
+      <pre v-highlight><slot name="exampleMd"></slot></pre>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import Button from "@/lib/Button.vue";
-import Switch1Demo from "./Switch1.demo.vue";
-import Switch1Md from "@/markdowns/switch1.demo.md";
 import { ref } from "vue";
 const codeVisible = ref<boolean>(false);
 const toggleCode = () => {
@@ -34,7 +30,6 @@ const props = defineProps<{
   border: 1px solid #d9d9d9;
   padding: 12px;
   margin: 24px 0;
-
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -47,10 +42,10 @@ const props = defineProps<{
   }
 
   &-action {
-    padding: 12px 0 18px 0;
+    padding: 12px 0;
   }
 }
-.markdown-body {
-  font-size: 20px;
+:slotted(.markdown-body) {
+  font-size: 19px;
 }
 </style>

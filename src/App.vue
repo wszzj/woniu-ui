@@ -30,5 +30,6 @@ router.afterEach(() => {
 }
 body {
   background-color: #fff;
+  font-size: 16px;
 }
 </style>
