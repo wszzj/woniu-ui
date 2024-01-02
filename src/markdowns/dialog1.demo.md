@@ -18,8 +18,8 @@
   </Dialog>
 </template>
 <script setup lang="ts">
-import Button from "@/lib/Button.vue";
-import Dialog from "@/lib/Dialog.vue";
+import { Button , Dialog } from "woniu-ui-1";
+import "woniu-ui-1/dist/style.css"
 import { ref } from "vue";
 const visible = ref(false);
 const toggle = () => {

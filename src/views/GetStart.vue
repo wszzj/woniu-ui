@@ -6,7 +6,8 @@
     <pre
       v-highlight
       class="language-javascript"
-    ><code>import {Button,Tabs, Tab, Switch, Dialog, openDialog} from "woniu-ui"</code></pre>
+    ><code>import {Button,Tabs, Tab, Switch, Dialog, openDialog} from "woniu-ui-1"
+import "woniu-ui-1/dist/style.css"//css文件也可以在main.ts中全局引入</code></pre>
     <h2>Vue单文件组件(TS+setup)</h2>
     <p>代码示例</p>
     <pre v-highlight class="language-html"><code>&lt;template&gt;
@@ -15,7 +16,8 @@
   &lt;/div&gt;
 &lt;/template&gt;
 &lt;script lang="ts" setup&gt;
-import { Button } from "woniu-ui";
+import { Button } from "woniu-ui-1";
+import 'woniu-ui-1/dist/style.css';
 &lt;/script&gt;</code></pre>
   </article>
   <p>

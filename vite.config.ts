@@ -18,21 +18,21 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  build: {
-    lib: {
-      entry: resolve(__dirname, "src/lib/main.ts"),
-      name: "woniu-ui",
-      fileName: (format) => `woniu-ui.${format}.js`,
-    },
-    rollupOptions: {
-      external: ["vue", "vite-plugin-md", "vite-svg-loader"],
-      output: {
-        globals: {
-          vue: "Vue",
-          "vite-plugin-md": "vitePluginMd",
-          "vite-svg-loader": "viteSvgLoader",
-        },
-      },
-    },
-  },
+  // build: {
+  //   lib: {
+  //     entry: resolve(__dirname, "src/lib/main.ts"),
+  //     name: "woniu-ui",
+  //     fileName: (format) => `woniu-ui.${format}.js`,
+  //   },
+  //   rollupOptions: {
+  //     external: ["vue", "vite-plugin-md", "vite-svg-loader"],
+  //     output: {
+  //       globals: {
+  //         vue: "Vue",
+  //         "vite-plugin-md": "vitePluginMd",
+  //         "vite-svg-loader": "viteSvgLoader",
+  //       },
+  //     },
+  //   },
+  // },
 });

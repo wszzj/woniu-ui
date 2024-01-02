@@ -5,13 +5,15 @@
     <pre
       v-highlight
       class="language-bash"
-    ><code>npm install woniu-ui</code></pre>
+    ><code>npm install woniu-ui-1</code></pre>
     <p>或者</p>
     <pre
       v-highlight
       class="language-bash"
-    ><code>yarn install woniu-ui</code></pre>
+    ><code>yarn install woniu-ui-1</code></pre>
+    <p>最新版本号：0.0.4</p>
   </article>
+
   <p>
     下一节：<a class="link" href="#/doc/get-start">
       <Button theme="link">开始使用</Button>
@@ -22,11 +24,6 @@
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped>
-p:last-child {
-  padding-top: 12px;
-  font-size: 16px;
-}
-
 .language-bash {
   font-size: 16px;
 }

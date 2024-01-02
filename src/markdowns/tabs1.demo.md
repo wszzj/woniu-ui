@@ -6,8 +6,8 @@
   </Tabs>
 </template>
 <script setup lang="ts">
-import Tabs from "@/lib/Tabs.vue";
-import Tab from "@/lib/Tab.vue";
+import { Tabs , Tab } from "woniu-ui-1";
+import "woniu-ui-1/dist/style.css"
 import { ref } from "vue";
 const title = ref("导航1");
 </script>

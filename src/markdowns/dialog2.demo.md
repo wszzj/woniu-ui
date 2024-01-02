@@ -4,9 +4,8 @@
   <Dialog />
 </template>
 <script setup lang="ts">
-import Button from "@/lib/Button.vue";
-import Dialog from "@/lib/Dialog.vue";
-import { openDialog } from "../../lib/openDialog.ts";
+import { Button , Dialog , openDialog } from "woniu-ui-1";
+import "woniu-ui-1/dist/style.css"
 const showDialog = () => {
   openDialog({
     title: "标题",
