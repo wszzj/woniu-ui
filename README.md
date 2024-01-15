@@ -16,8 +16,7 @@
 # 库文件打包步骤
 
 1. 运行yarn
-2. 取消vite.config.ts文件的注释
-3. 运行yarn build
-4. dist 目录就是库文件源代码
-5. npm login登录npm官网
-6. npm publish发布（每次发布需要修改版本号）
+2. 运行yarn hubBuild
+3. dist 目录就是库文件源代码
+4. npm login登录npm官网
+5. npm publish发布（每次发布需要修改版本号）
