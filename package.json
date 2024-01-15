@@ -10,15 +10,15 @@
   ],
   "main": "./dist/woniu-ui.umd.cjs",
   "module": "./dist/woniu-ui.es.js",
-  "style":"./dist/style.css",
+  "style": "./dist/style.css",
   "exports": {
     ".": {
       "import": "./dist/woniu-ui.es.js",
       "require": "./dist/woniu-ui.umd.cjs"
     },
-    "./dist/style.css":{
-      "import":"./dist/style.css",
-      "require":"./dist/style.css"
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "license": "MIT",
@@ -26,6 +26,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
+    "hubBuild": "vue-tsc && vite build --config vite.dev.hub.config.ts",
     "preview": "vite preview"
   },
   "dependencies": {
