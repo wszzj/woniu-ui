@@ -29,3 +29,10 @@ import Tabs1Md from "@/markdowns/tabs1.demo.md";
 import Tabs2Demo from "./Tabs2Demo.vue";
 import Tabs2Md from "@/markdowns/tabs2.demo.md";
 </script>
+<style lang="scss" scoped>
+@media (prefers-color-scheme: dark) {
+  .wo-button {
+    background-color: #0e1117;
+  }
+}
+</style>

@@ -47,4 +47,10 @@ const props = defineProps<{
 :slotted(.markdown-body) {
   font-size: 19px;
 }
+@media (prefers-color-scheme: dark) {
+  .demo {
+    background: #eee;
+    color: #000;
+  }
+}
 </style>

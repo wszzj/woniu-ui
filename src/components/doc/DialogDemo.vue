@@ -27,3 +27,10 @@ import Dialog1Md from "@/markdowns/dialog1.demo.md";
 import Dialog2Demo from "./Dialog2Demo.vue";
 import Dialog2Md from "@/markdowns/dialog2.demo.md";
 </script>
+<style lang="scss" scoped>
+@media (prefers-color-scheme: dark) {
+  .wo-button {
+    background-color: #0e1117;
+  }
+}
+</style>

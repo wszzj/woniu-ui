@@ -58,3 +58,10 @@ import Button4Md from "@/markdowns/button4.demo.md";
 import Button5Demo from "./Button5Demo.vue";
 import Button5Md from "@/markdowns/button5.demo.md";
 </script>
+<style lang="scss" scoped>
+@media (prefers-color-scheme: dark) {
+  .wo-button {
+    background-color: #0e1117;
+  }
+}
+</style>

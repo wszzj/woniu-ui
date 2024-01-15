@@ -41,4 +41,9 @@ a:focus,
 a:hover {
   color: #8be4d4;
 }
+@media (prefers-color-scheme: dark) {
+  .wo-button {
+    background-color: #0e1117;
+  }
+}
 </style>

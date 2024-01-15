@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import "./lib/wo.scss";
 import "./style.scss";
-import "highlight.js/styles/atom-one-light.css";
+import "highlight.js/styles/atom-one-dark.css";
 import hljs from "highlight.js/lib/core";
 import App from "./App.vue";
 import { router } from "./router";

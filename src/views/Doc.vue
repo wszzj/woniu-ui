@@ -101,4 +101,9 @@ aside {
     }
   }
 }
+@media (prefers-color-scheme: dark) {
+  aside {
+    background-color: #0e1117;
+  }
+}
 </style>

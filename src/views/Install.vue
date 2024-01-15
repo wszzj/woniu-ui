@@ -27,4 +27,12 @@
 .language-bash {
   font-size: 16px;
 }
+@media (prefers-color-scheme: dark) {
+  .wo-button {
+    background-color: #0e1117;
+  }
+  .language-bash {
+    color: #fff;
+  }
+}
 </style>

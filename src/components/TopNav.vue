@@ -5,11 +5,13 @@
       @click="toggleAside"
       v-if="switchIconVisible"
     />
+
     <router-link to="/" class="logoWrapper">
       <SnailLogoComponent class="svg-icon logo" />
       <h1 class="name">蜗牛UI</h1>
     </router-link>
 
+    <SwitchTheme />
     <ol>
       <li><router-link to="/doc/intro">介绍</router-link></li>
       <li><router-link to="/doc/get-start">使用</router-link></li>
@@ -27,7 +29,7 @@ import { inject } from "vue";
 import SnailLogoComponent from "../assets/logos/snail.svg?component";
 import SwitchIconComponent from "../assets/icons/switchIcon.svg?component";
 import GithubIconComponent from "../assets/icons/github.svg?component";
-
+import SwitchTheme from "./SwitchTheme.vue";
 import { toggleAsideKey } from "../keys";
 const toggleAside = inject(toggleAsideKey);
 const props = defineProps<{
@@ -51,6 +53,7 @@ const props = defineProps<{
   z-index: 100;
   height: 50px;
   background-color: #fff;
+
   .switchIcon {
     display: none;
   }
@@ -110,6 +113,19 @@ const props = defineProps<{
       transform: translateY(-50%);
       width: 1.4em;
       height: 1.4em;
+    }
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .topNav {
+    color: #fff;
+    background-color: #0e1117;
+    .github {
+      filter: invert(100%);
+      &:hover,
+      &:focus {
+        opacity: 0.8;
+      }
     }
   }
 }

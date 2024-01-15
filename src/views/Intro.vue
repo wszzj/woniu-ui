@@ -27,4 +27,9 @@ p:last-child {
   padding-top: 12px;
   font-size: 16px;
 }
+@media (prefers-color-scheme: dark) {
+  .wo-button {
+    background-color: #0e1117;
+  }
+}
 </style>

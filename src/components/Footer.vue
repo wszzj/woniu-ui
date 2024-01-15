@@ -18,4 +18,13 @@ footer {
   background-color: #f1f3fa;
   overflow: hidden;
 }
+@media (prefers-color-scheme: dark) {
+  footer {
+    color: #fff;
+    background-color: #0e1117;
+  }
+  hr {
+    filter: invert(100%);
+  }
+}
 </style>

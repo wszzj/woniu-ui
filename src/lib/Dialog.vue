@@ -111,4 +111,9 @@ const confirm = () => {
     width: 85%;
   }
 }
+@media (prefers-color-scheme: dark) {
+  .wo-dialog-wrapper {
+    color: #000;
+  }
+}
 </style>

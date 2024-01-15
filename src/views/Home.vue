@@ -167,4 +167,15 @@ const switchIconVisible = ref<boolean>(false);
     }
   }
 }
+@media (prefers-color-scheme: dark) {
+  .leftCircle,
+  .rightCircle {
+    opacity: 0.6;
+  }
+  .wo-button {
+    background-color: #3a3a3a;
+    color: #fff;
+    border-color: #3a3a3a;
+  }
+}
 </style>
