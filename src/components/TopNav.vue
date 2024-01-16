@@ -11,7 +11,6 @@
       <h1 class="name">蜗牛UI</h1>
     </router-link>
 
-    <SwitchTheme />
     <ol>
       <li><router-link to="/doc/intro">介绍</router-link></li>
       <li><router-link to="/doc/get-start">使用</router-link></li>
@@ -29,7 +28,6 @@ import { inject } from "vue";
 import SnailLogoComponent from "../assets/logos/snail.svg?component";
 import SwitchIconComponent from "../assets/icons/switchIcon.svg?component";
 import GithubIconComponent from "../assets/icons/github.svg?component";
-import SwitchTheme from "./SwitchTheme.vue";
 import { toggleAsideKey } from "../keys";
 const toggleAside = inject(toggleAsideKey);
 const props = defineProps<{

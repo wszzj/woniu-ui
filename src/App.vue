@@ -3,28 +3,13 @@
 </template>
 
 <script lang="ts" setup>
-import { provide, ref } from "vue";
+import { provide, ref, watchEffect } from "vue";
 import { router } from "./router";
-import {
-  asideVisibleKey,
-  toggleAsideKey,
-  themeKey,
-  toggleThemeKey,
-} from "./keys";
+import { asideVisibleKey, toggleAsideKey } from "./keys";
 const width = document.documentElement.clientWidth;
 const app = document.querySelector("#app");
 const asideVisible = ref(width > 500 ? true : false);
-const theme = ref("light");
-const toggleTheme = () => {
-  if (theme.value === "light") {
-    theme.value = "dark";
 
-    app?.classList.add("dark");
-  } else {
-    theme.value = "light";
-    app?.classList.remove("dark");
-  }
-};
 const toggleAside = () => {
   if (asideVisible) {
     asideVisible.value = !asideVisible.value;
@@ -32,8 +17,7 @@ const toggleAside = () => {
 };
 provide(asideVisibleKey, asideVisible);
 provide(toggleAsideKey, toggleAside);
-provide(themeKey, theme);
-provide(toggleThemeKey, toggleTheme);
+
 router.afterEach(() => {
   if (width <= 500) {
     asideVisible.value = false;
@@ -53,7 +37,7 @@ body {
   font-size: 16px;
 }
 @media screen and (prefers-color-scheme: dark) {
-  body {
+  #app {
     color: #fff;
     background-color: #0e1117;
   }
